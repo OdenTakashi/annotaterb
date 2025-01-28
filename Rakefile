@@ -11,6 +11,10 @@ def helper.version_tag
   "Bump_version_to_#{version}"
 end
 
+def helper.version
+  "Bump_version_to_#{version}"
+end
+
 helper.install
 
 namespace :spec do
