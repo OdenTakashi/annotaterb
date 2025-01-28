@@ -8,7 +8,7 @@ base_dir = File.join(File.dirname(__FILE__))
 helper = Bundler::GemHelper.new(base_dir)
 
 def helper.version_tag
-  "Bump version to #{version}"
+  "Bump_version_to_#{version}"
 end
 
 helper.install
