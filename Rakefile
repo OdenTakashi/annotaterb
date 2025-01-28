@@ -1,7 +1,17 @@
 # frozen_string_literal: true
-
+require "bundler/gem_helper"
 require "bundler"
 require "rspec/core/rake_task"
+
+base_dir = File.join(File.dirname(__FILE__))
+
+helper = Bundler::GemHelper.new(base_dir)
+
+def helper.version_tag
+  version
+end
+
+helper.install
 
 namespace :spec do
   RSpec::Core::RakeTask.new(:unit) do |test|
