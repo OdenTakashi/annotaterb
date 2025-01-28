@@ -12,7 +12,7 @@ def helper.version_tag
 end
 
 def helper.version
-  "Bump_version_to_#{version}"
+  "Bump_version_to"
 end
 
 helper.install
