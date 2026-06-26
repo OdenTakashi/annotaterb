@@ -18,6 +18,11 @@ module SpecHelper
     end
 
     def model_template(name)
+      if ENV.fetch("RAILS_VERSION", "~> 7.2.0")[/(\d+)\./, 1].to_i >= 8
+        rails8_path = File.join(::Aruba.config.root_directory, "spec/templates/rails8/#{ENV["DATABASE_ADAPTER"]}", name)
+        return rails8_path if File.exist?(rails8_path)
+      end
+
       File.join(models_template_dir, name)
     end
 
